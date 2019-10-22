@@ -13,17 +13,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        resetNumber(findViewById(R.id.textNumber)); // esta bien hacer esto? No iniciaba como solo lectura el campo si no.
     }
 
     public void incrementarNumber(View view) {
-        TextView numberView = (TextView) findViewById(R.id.textNumber);
+        TextView numberView = findViewById(R.id.textNumber);
         number = number + 1;
         numberView.setText(String.valueOf(number));
         System.out.println(number);
     }
 
+
     public void resetNumber(View view) {
-        TextView numberView = (TextView) findViewById(R.id.textNumber);
+        TextView numberView = findViewById(R.id.textNumber);
         number = 0;
         numberView.setText(String.valueOf(number));
         System.out.println("Reset: " +number);
